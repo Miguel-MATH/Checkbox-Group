@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração — Math Magic UI</title>
+    <link rel="stylesheet" href="../src/math-magic.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 32px;
+            background: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #007bff;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        .demo-filters {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 12px; }
+            main { padding: 16px; }
+            .demo-filters { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Math Magic UI</h1>
+        <p>Demonstração dos menus e checkboxes reutilizáveis.</p>
+
+        <div class="demo-filters">
+            <div class="filter-group">
+                <button type="button" class="filter-toggle"
+                    onclick="ToggleDisplay(this, document.getElementById('demoCategories'), 'Categorias')">
+                    Categorias ▲
+                </button>
+
+                <div id="demoCategories" class="filter-menu">
+                    <label class="filter-option">
+                        <input id="allCategories" class="form-check-input" type="checkbox"
+                            onclick="SelectAll(this, document.getElementsByClassName('categoryOption'))">
+                        Todas as categorias
+                    </label>
+                    <label class="filter-option">
+                        <input class="form-check-input categoryOption" type="checkbox" value="matematica"
+                            onclick="UpdateSelectAll(document.getElementById('allCategories'), document.getElementsByClassName('categoryOption'))">
+                        Matemática
+                    </label>
+                    <label class="filter-option">
+                        <input class="form-check-input categoryOption" type="checkbox" value="fisica"
+                            onclick="UpdateSelectAll(document.getElementById('allCategories'), document.getElementsByClassName('categoryOption'))">
+                        Física
+                    </label>
+                    <label class="filter-option">
+                        <input class="form-check-input categoryOption" type="checkbox" value="quimica"
+                            onclick="UpdateSelectAll(document.getElementById('allCategories'), document.getElementsByClassName('categoryOption'))">
+                        Química
+                    </label>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <button type="button" class="filter-toggle"
+                    onclick="ToggleDisplay(this, document.getElementById('demoTopics'), 'Tópicos')">
+                    Tópicos ▲
+                </button>
+
+                <div id="demoTopics" class="filter-menu">
+                    <label class="filter-option">
+                        <input id="allTopics" class="form-check-input" type="checkbox"
+                            onclick="SelectAll(this, document.getElementsByClassName('topicOption'))">
+                        Todos os tópicos
+                    </label>
+                    <label class="filter-option">
+                        <input class="form-check-input topicOption" type="checkbox" value="teoria"
+                            onclick="UpdateSelectAll(document.getElementById('allTopics'), document.getElementsByClassName('topicOption'))">
+                        Teoria
+                    </label>
+                    <label class="filter-option">
+                        <input class="form-check-input topicOption" type="checkbox" value="exercicios"
+                            onclick="UpdateSelectAll(document.getElementById('allTopics'), document.getElementsByClassName('topicOption'))">
+                        Exercícios
+                    </label>
+                    <label class="filter-option">
+                        <input class="form-check-input topicOption" type="checkbox" value="desafios"
+                            onclick="UpdateSelectAll(document.getElementById('allTopics'), document.getElementsByClassName('topicOption'))">
+                        Desafios
+                    </label>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../src/math-magic.js"></script>
+</body>
+</html>

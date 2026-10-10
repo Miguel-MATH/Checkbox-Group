@@ -1,0 +1,82 @@
+/* Math Magic UI — estilos reutilizáveis para menus de seleção */
+
+.filter-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.filter-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.filter-toggle:hover {
+    border-color: #80bdff;
+    color: #007bff;
+}
+
+.filter-menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-option:hover {
+    background-color: #f1f5f9;
+}
+
+.form-check-input {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: #007bff;
+    cursor: pointer;
+}
